@@ -1,0 +1,6 @@
+framework module Pods_Guitar_Design {
+  umbrella header "Pods-Guitar_Design-umbrella.h"
+
+  export *
+  module * { export * }
+}
