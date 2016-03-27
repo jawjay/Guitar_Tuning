@@ -8,7 +8,7 @@
 
 import UIKit
 import EZAudio
-class ViewController: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
+class EZFFT: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
     @IBOutlet var audioPlotFreq: EZAudioPlot!
     @IBOutlet weak var audioPlotTime: EZAudioPlot!
     @IBOutlet weak var maxFrequencyLabel: UILabel!
@@ -63,6 +63,7 @@ class ViewController: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
         });
     }
     
+    
     //------------------------------------------------------------------------------
     // MARK: EZMicrophoneFFTDelegate
     //------------------------------------------------------------------------------
@@ -70,17 +71,21 @@ class ViewController: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
     
     func fft(fft: EZAudioFFT!, updatedWithFFTData fftData: UnsafeMutablePointer<Float>, bufferSize: vDSP_Length) {
     
-        var maxFrequency: Float = self.fft.maxFrequency
+        let maxFrequency: Float = self.fft.maxFrequency
     
-        var noteName:NSString = EZAudioUtilities.noteNameStringForFrequency(maxFrequency, includeOctave: true)
+        let noteName:NSString = EZAudioUtilities.noteNameStringForFrequency(maxFrequency, includeOctave: true)
        
         weak var weakSelf = self
+        
+        
         dispatch_async(dispatch_get_main_queue(),{ () -> Void in
             weakSelf!.maxFrequencyLabel.text = "Highest Note: \(noteName),\nFrequency \(maxFrequency)"
             self.audioPlotFreq.updateBuffer(fftData, withBufferSize: UInt32(bufferSize))
             //self.view.bringSubviewToFront(self.maxFrequencyLabel)
             
         });
+        
+       
     }
     
 

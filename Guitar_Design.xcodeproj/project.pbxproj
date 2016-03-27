@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5ADC4186E2BCB2767D272947 /* Pods_Guitar_Design.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733EB7C466321BCB079B034 /* Pods_Guitar_Design.framework */; };
+		9F0138D51C9F5237000CA772 /* EZPlayFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0138D41C9F5237000CA772 /* EZPlayFile.swift */; };
+		9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */; };
 		9F9DFE8E1C9EFE660021D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */; };
-		9F9DFE901C9EFE660021D9C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8F1C9EFE660021D9C1 /* ViewController.swift */; };
+		9F9DFE901C9EFE660021D9C1 /* EZFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */; };
 		9F9DFE931C9EFE660021D9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9DFE911C9EFE660021D9C1 /* Main.storyboard */; };
 		9F9DFE961C9EFE660021D9C1 /* Guitar_Design.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE941C9EFE660021D9C1 /* Guitar_Design.xcdatamodeld */; };
 		9F9DFE981C9EFE660021D9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9DFE971C9EFE660021D9C1 /* Assets.xcassets */; };
 		9F9DFE9B1C9EFE660021D9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9DFE991C9EFE660021D9C1 /* LaunchScreen.storyboard */; };
 		9F9DFEA61C9EFE660021D9C1 /* Guitar_DesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFEA51C9EFE660021D9C1 /* Guitar_DesignTests.swift */; };
 		9F9DFEB11C9EFE660021D9C1 /* Guitar_DesignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFEB01C9EFE660021D9C1 /* Guitar_DesignUITests.swift */; };
+		9FF016E01CA836C8007C9E6A /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF016DF1CA836C8007C9E6A /* Master.swift */; };
 		AE2A24E83D7010AC098FF043 /* Pods_Guitar_DesignUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85682A1EB5BF6149FBF8E474 /* Pods_Guitar_DesignUITests.framework */; };
 		F2F4A87A1FB37344D89C52A4 /* Pods_Guitar_DesignTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ED30B76265C815872BE14A /* Pods_Guitar_DesignTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,20 +47,23 @@
 		6518A5A417607282C5DD4E0E /* Pods-Guitar_DesignTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_DesignTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_DesignTests/Pods-Guitar_DesignTests.release.xcconfig"; sourceTree = "<group>"; };
 		71AD20EBD09810F906AB1F28 /* Pods-Guitar_Design.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_Design.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_Design/Pods-Guitar_Design.debug.xcconfig"; sourceTree = "<group>"; };
 		85682A1EB5BF6149FBF8E474 /* Pods_Guitar_DesignUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guitar_DesignUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0138D41C9F5237000CA772 /* EZPlayFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZPlayFile.swift; sourceTree = "<group>"; };
+		9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "simple-drum-beat.wav"; sourceTree = "<group>"; };
 		9F9DFE8A1C9EFE660021D9C1 /* Guitar_Design.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guitar_Design.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F9DFE8F1C9EFE660021D9C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZFFT.swift; sourceTree = "<group>"; };
 		9F9DFE921C9EFE660021D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F9DFE951C9EFE660021D9C1 /* Guitar_Design.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guitar_Design.xcdatamodel; sourceTree = "<group>"; };
 		9F9DFE971C9EFE660021D9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F9DFE9A1C9EFE660021D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F9DFE9C1C9EFE660021D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F9DFEA11C9EFE660021D9C1 /* Guitar_DesignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guitar_DesignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9DFEA11C9EFE660021D9C1 /* Guitar_Design.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guitar_Design.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFEA51C9EFE660021D9C1 /* Guitar_DesignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guitar_DesignTests.swift; sourceTree = "<group>"; };
 		9F9DFEA71C9EFE660021D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F9DFEAC1C9EFE660021D9C1 /* Guitar_DesignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guitar_DesignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9DFEAC1C9EFE660021D9C1 /* Guitar_Design.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guitar_Design.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFEB01C9EFE660021D9C1 /* Guitar_DesignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guitar_DesignUITests.swift; sourceTree = "<group>"; };
 		9F9DFEB21C9EFE660021D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FF016DF1CA836C8007C9E6A /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		A8ED30B76265C815872BE14A /* Pods_Guitar_DesignTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guitar_DesignTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72EA79CD4E0037C0676221 /* Pods-Guitar_DesignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_DesignUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_DesignUITests/Pods-Guitar_DesignUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D1E1765549705DCEBD8A3920 /* Pods-Guitar_Design.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_Design.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_Design/Pods-Guitar_Design.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		9F9DFE811C9EFE660021D9C1 = {
 			isa = PBXGroup;
 			children = (
+				9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */,
 				9F9DFE8C1C9EFE660021D9C1 /* Guitar_Design */,
 				9F9DFEA41C9EFE660021D9C1 /* Guitar_DesignTests */,
 				9F9DFEAF1C9EFE660021D9C1 /* Guitar_DesignUITests */,
@@ -117,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				9F9DFE8A1C9EFE660021D9C1 /* Guitar_Design.app */,
-				9F9DFEA11C9EFE660021D9C1 /* Guitar_DesignTests.xctest */,
-				9F9DFEAC1C9EFE660021D9C1 /* Guitar_DesignUITests.xctest */,
+				9F9DFEA11C9EFE660021D9C1 /* Guitar_Design.xctest */,
+				9F9DFEAC1C9EFE660021D9C1 /* Guitar_Design.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */,
-				9F9DFE8F1C9EFE660021D9C1 /* ViewController.swift */,
+				9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */,
+				9FF016DF1CA836C8007C9E6A /* Master.swift */,
+				9F0138D41C9F5237000CA772 /* EZPlayFile.swift */,
 				9F9DFE911C9EFE660021D9C1 /* Main.storyboard */,
 				9F9DFE971C9EFE660021D9C1 /* Assets.xcassets */,
 				9F9DFE991C9EFE660021D9C1 /* LaunchScreen.storyboard */,
@@ -209,7 +218,7 @@
 			);
 			name = Guitar_DesignTests;
 			productName = Guitar_DesignTests;
-			productReference = 9F9DFEA11C9EFE660021D9C1 /* Guitar_DesignTests.xctest */;
+			productReference = 9F9DFEA11C9EFE660021D9C1 /* Guitar_Design.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9F9DFEAB1C9EFE660021D9C1 /* Guitar_DesignUITests */ = {
@@ -229,7 +238,7 @@
 			);
 			name = Guitar_DesignUITests;
 			productName = Guitar_DesignUITests;
-			productReference = 9F9DFEAC1C9EFE660021D9C1 /* Guitar_DesignUITests.xctest */;
+			productReference = 9F9DFEAC1C9EFE660021D9C1 /* Guitar_Design.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -280,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */,
 				9F9DFE9B1C9EFE660021D9C1 /* LaunchScreen.storyboard in Resources */,
 				9F9DFE981C9EFE660021D9C1 /* Assets.xcassets in Resources */,
 				9F9DFE931C9EFE660021D9C1 /* Main.storyboard in Resources */,
@@ -430,7 +440,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9DFE901C9EFE660021D9C1 /* ViewController.swift in Sources */,
+				9FF016E01CA836C8007C9E6A /* Master.swift in Sources */,
+				9F0138D51C9F5237000CA772 /* EZPlayFile.swift in Sources */,
+				9F9DFE901C9EFE660021D9C1 /* EZFFT.swift in Sources */,
 				9F9DFE8E1C9EFE660021D9C1 /* AppDelegate.swift in Sources */,
 				9F9DFE961C9EFE660021D9C1 /* Guitar_Design.xcdatamodeld in Sources */,
 			);
@@ -576,7 +588,7 @@
 				INFOPLIST_FILE = Guitar_Design/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-Design";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 			};
 			name = Debug;
 		};
@@ -588,7 +600,7 @@
 				INFOPLIST_FILE = Guitar_Design/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-Design";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 			};
 			name = Release;
 		};
@@ -600,7 +612,7 @@
 				INFOPLIST_FILE = Guitar_DesignTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guitar_Design.app/Guitar_Design";
 			};
 			name = Debug;
@@ -613,7 +625,7 @@
 				INFOPLIST_FILE = Guitar_DesignTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guitar_Design.app/Guitar_Design";
 			};
 			name = Release;
@@ -625,7 +637,7 @@
 				INFOPLIST_FILE = Guitar_DesignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 				TEST_TARGET_NAME = Guitar_Design;
 				USES_XCTRUNNER = YES;
 			};
@@ -638,7 +650,7 @@
 				INFOPLIST_FILE = Guitar_DesignUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guitar_Design;
 				TEST_TARGET_NAME = Guitar_Design;
 				USES_XCTRUNNER = YES;
 			};

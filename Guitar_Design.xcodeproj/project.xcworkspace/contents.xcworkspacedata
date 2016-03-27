@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Guitar_Design.xcodeproj">
+      location = "self:/Users/MarkJaj/Stuff/Spring16/EE_Design/Guitar_Design/Guitar_Design.xcodeproj">
    </FileRef>
 </Workspace>

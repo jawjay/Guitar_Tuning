@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A1C7CFF68D18C531FC747217'
+               BlueprintIdentifier = '77002F65DE40502AEC5C0232'
                BlueprintName = 'Pods-Guitar_Design'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Guitar_Design.framework'>
