@@ -17,6 +17,16 @@ class EZFFT: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
     var fft:EZAudioFFTRolling!
     
     let FFTViewControllerFFTWindowSize:vDSP_Length = 4096
+    var filtStart:UInt32 = 100
+    var filtEnd:UInt32 = 200
+    var myAudio = AudioStreamBasicDescription()
+    
+    
+    
+    
+    
+    
+    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -37,12 +47,30 @@ class EZFFT: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
         self.audioPlotFreq.shouldFill = true
         self.audioPlotFreq.plotType = EZPlotType.Buffer
         self.audioPlotFreq.shouldCenterYAxis = false
+//        
+//        myAudio.mSampleRate = 4800
+//        myAudio.mFormatFlags = 33
+//        myAudio.mBytesPerPacket = 4
+//        myAudio.mFramesPerPacket = 1
+//        myAudio.mBytesPerFrame = 4
+//        myAudio.mBitsPerChannel = 32
+//        myAudio.mReserved = 1
+            myAudio = EZAudioUtilities.floatFormatWithNumberOfChannels(4, sampleRate: 4800)
         
-        self.microphone = EZMicrophone(delegate: self, startsImmediately: false)
+        print(String(myAudio.mSampleRate))
         
+        //self.microphone = EZMicrophone(delegate: self, startsImmediately: false)
+        self.microphone = EZMicrophone(delegate: self, withAudioStreamBasicDescription: myAudio, startsImmediately: false)
         //problem with this line
+        
         fft = EZAudioFFTRolling.fftWithWindowSize(FFTViewControllerFFTWindowSize, sampleRate: Float(self.microphone.audioStreamBasicDescription().mSampleRate), delegate: self)
-
+        
+        print("mic")
+        print(String(self.microphone.audioStreamBasicDescription().mSampleRate))
+        
+        
+        
+//        self.microphone.setAudioStreamBasicDescription()
         self.microphone.startFetchingAudio()
         
         
@@ -51,14 +79,15 @@ class EZFFT: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
     
     //------------------------------------------------------------------------------
     // MARK: EZMicrophoneDelegate
-    //------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------
     
     func microphone(microphone: EZMicrophone!, hasAudioReceived buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32) {
         
         
         self.fft.computeFFTWithBuffer(buffer[0], withBufferSize: bufferSize)
-
+        //self.fft.computeFFTWithBufferWithFilter(buffer[0], withBufferSize: bufferSize,filterStart:filtStart ,filterEnd:filtEnd)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            
             self.audioPlotTime?.updateBuffer(buffer[0], withBufferSize: bufferSize);
         });
     }

@@ -217,6 +217,14 @@
  */
 - (float *)computeFFTWithBuffer:(float *)buffer withBufferSize:(UInt32)bufferSize;
 
+//- (float *)computeFFTWithBufferWithFilter:(float *)buffer withBufferSize:(UInt32)bufferSize withFilter: (float*)filter;
+
+- (float *)computeFFTWithBufferWithFilter:(float *)buffer withBufferSize:(UInt32)bufferSize filterStart:(UInt32)start filterEnd:(UInt32)end ;
+
+- (void)applyFiltb:(float*)buffer filtStart:(vDSP_Stride)s filtEnd:(int)e ;
+
+void applyFilt (  float *buffer, vDSP_Stride Ib,  int S, const int E,const float *Z, vDSP_Length L );
+
 //------------------------------------------------------------------------------
 
 /**

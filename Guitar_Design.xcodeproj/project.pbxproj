@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5ADC4186E2BCB2767D272947 /* Pods_Guitar_Design.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733EB7C466321BCB079B034 /* Pods_Guitar_Design.framework */; };
 		9F0138D51C9F5237000CA772 /* EZPlayFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0138D41C9F5237000CA772 /* EZPlayFile.swift */; };
+		9F1A6C851CA8707E001484BB /* guitar_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6C841CA8707E001484BB /* guitar_head.png */; };
+		9F1A6C871CA871C8001484BB /* guitar_head2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6C861CA871C8001484BB /* guitar_head2.png */; };
 		9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */; };
 		9F9DFE8E1C9EFE660021D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */; };
 		9F9DFE901C9EFE660021D9C1 /* EZFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */; };
@@ -48,6 +50,8 @@
 		71AD20EBD09810F906AB1F28 /* Pods-Guitar_Design.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_Design.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_Design/Pods-Guitar_Design.debug.xcconfig"; sourceTree = "<group>"; };
 		85682A1EB5BF6149FBF8E474 /* Pods_Guitar_DesignUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guitar_DesignUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0138D41C9F5237000CA772 /* EZPlayFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZPlayFile.swift; sourceTree = "<group>"; };
+		9F1A6C841CA8707E001484BB /* guitar_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar_head.png; sourceTree = "<group>"; };
+		9F1A6C861CA871C8001484BB /* guitar_head2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar_head2.png; sourceTree = "<group>"; };
 		9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "simple-drum-beat.wav"; sourceTree = "<group>"; };
 		9F9DFE8A1C9EFE660021D9C1 /* Guitar_Design.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guitar_Design.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		9F9DFE811C9EFE660021D9C1 = {
 			isa = PBXGroup;
 			children = (
+				9F1A6C841CA8707E001484BB /* guitar_head.png */,
+				9F1A6C861CA871C8001484BB /* guitar_head2.png */,
 				9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */,
 				9F9DFE8C1C9EFE660021D9C1 /* Guitar_Design */,
 				9F9DFEA41C9EFE660021D9C1 /* Guitar_DesignTests */,
@@ -290,8 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */,
+				9F1A6C851CA8707E001484BB /* guitar_head.png in Resources */,
 				9F9DFE9B1C9EFE660021D9C1 /* LaunchScreen.storyboard in Resources */,
 				9F9DFE981C9EFE660021D9C1 /* Assets.xcassets in Resources */,
+				9F1A6C871CA871C8001484BB /* guitar_head2.png in Resources */,
 				9F9DFE931C9EFE660021D9C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -145,9 +145,103 @@ typedef struct EZAudioFFTInfo
     self.info->inversedFFTData = (float *)malloc(maximumSizePerComponentBytes);
 }
 
+
+
+
 //------------------------------------------------------------------------------
 #pragma mark - Actions
 //------------------------------------------------------------------------------
+//// ADDED BY MARK JAJEH
+
+void applyFilt (  float * buffer, vDSP_Stride Ib,  int S, const int E,const float *Z, vDSP_Length L )
+{
+
+    for (int n = S;n<E;++n){
+        buffer[n*Ib] = *Z;
+        //buffer[(L-n)*Ib] = *Z;
+    }
+}
+
+
+
+- (float *)computeFFTWithBufferWithFilter:(float *)buffer withBufferSize:(UInt32)bufferSize filterStart:(UInt32)start filterEnd:(UInt32)end
+{
+    if (buffer == NULL)
+    {
+        return NULL;
+    }
+    
+    
+    //
+    // Calculate real + imaginary components and normalize
+    //
+    //vDSP_conv(buffer,)
+    
+    // filter is currently set as buffer, NEED TO CHANGE AND CREATE CUSTOM FILTER
+    
+    
+    vDSP_Length log2n = log2f(bufferSize);
+    
+    
+    long nOver2 = bufferSize / 2;
+    
+    float mFFTNormFactor = 10.0 / (2 * (end-start));
+    float zspot = 0;
+    float* zp = &zspot;
+    
+    
+
+    // Buffers for real (time-domain) input and output signals.
+    
+    
+    vDSP_ctoz((COMPLEX*)buffer, 2, &(self.info->complexA), 1, nOver2); // splits real and imaginary parts in self.info.complexA
+    vDSP_fft_zrip(self.info->fftSetup, &(self.info->complexA), 1, log2n, FFT_FORWARD); // fft computation is her
+    
+    vDSP_vsmul(self.info->complexA.realp, 1, &mFFTNormFactor, self.info->complexA.realp, 1, nOver2);//scalar multiply
+    //should do the below
+   
+    
+
+    
+    
+    applyFilt(self.info->complexA.realp, 1, start, end, zp, nOver2);
+    applyFilt(self.info->complexA.imagp, 1, start, end, zp, nOver2);
+    
+    vDSP_vsmul(self.info->complexA.imagp, 1, &mFFTNormFactor, self.info->complexA.imagp, 1, nOver2);
+    // need filter befor here
+    vDSP_zvmags(&(self.info->complexA), 1, self.info->outFFTData, 1, nOver2);
+    vDSP_fft_zrip(self.info->fftSetup, &(self.info->complexA), 1, log2n, FFT_INVERSE);
+    vDSP_ztoc(&(self.info->complexA), 1, (COMPLEX *) self.info->inversedFFTData , 2, nOver2);
+    
+    
+    self.info->outFFTDataLength = nOver2;
+    
+    //
+    // Calculate max freq
+    //
+    if (self.sampleRate > 0.0f)
+    {
+        vDSP_maxvi(self.info->outFFTData, 1, &self.info->maxFrequencyMangitude, &self.info->maxFrequencyIndex, nOver2);
+        self.info->maxFrequency = [self frequencyAtIndex:self.info->maxFrequencyIndex];
+    }
+    
+    //
+    // Notify delegate
+    //
+    if ([self.delegate respondsToSelector:@selector(fft:updatedWithFFTData:bufferSize:)])
+    {
+        [self.delegate fft:self
+        updatedWithFFTData:self.info->outFFTData
+                bufferSize:nOver2];
+    }
+    
+    //
+    // Return the FFT
+    //
+    return self.info->outFFTData;
+}
+
+
 
 - (float *)computeFFTWithBuffer:(float *)buffer withBufferSize:(UInt32)bufferSize
 {
@@ -159,6 +253,8 @@ typedef struct EZAudioFFTInfo
     //
     // Calculate real + imaginary components and normalize
     //
+    //vDSP_conv(buffer,)
+    
     vDSP_Length log2n = log2f(bufferSize);
     long nOver2 = bufferSize / 2;
     float mFFTNormFactor = 10.0 / (2 * bufferSize);
@@ -169,6 +265,7 @@ typedef struct EZAudioFFTInfo
     vDSP_zvmags(&(self.info->complexA), 1, self.info->outFFTData, 1, nOver2);
     vDSP_fft_zrip(self.info->fftSetup, &(self.info->complexA), 1, log2n, FFT_INVERSE);
     vDSP_ztoc(&(self.info->complexA), 1, (COMPLEX *) self.info->inversedFFTData , 2, nOver2);
+    
     self.info->outFFTDataLength = nOver2;
     
     //
@@ -424,6 +521,29 @@ typedef struct EZAudioFFTInfo
     return [super computeFFTWithBuffer:self.historyInfo->buffer
                         withBufferSize:self.historyInfo->bufferSize];
 }
+
+- (float *)computeFFTWithBufferWithFilter:(float *)buffer
+                 withBufferSize:(UInt32)bufferSize filterStart:(UInt32)start filterEnd:(UInt32)end zeroPointer:(float *) Z
+{
+    if (buffer == NULL)
+    {
+        return NULL;
+    }
+    
+    //
+    // Append buffer to history window
+    //
+    [EZAudioUtilities appendBuffer:buffer
+                    withBufferSize:bufferSize
+                     toHistoryInfo:self.historyInfo];
+    
+    //
+    // Call super to calculate the FFT of the window
+    //
+    return [super computeFFTWithBufferWithFilter:self.historyInfo->buffer
+                        withBufferSize:self.historyInfo->bufferSize filterStart:start filterEnd:end ];
+}
+
 
 //------------------------------------------------------------------------------
 #pragma mark - Getters

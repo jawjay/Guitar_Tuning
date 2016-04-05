@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rl3-Qa-Ax2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3im-lX-LfP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
         <scene sceneID="8Up-Ya-STI">
             <objects>
-                <viewController id="Rl3-Qa-Ax2" customClass="Master" customModule="Guitar_Tune" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rl3-Qa-Ax2" customClass="Master" customModule="Guitar_Design" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PJI-wS-QsC"/>
                         <viewControllerLayoutGuide type="bottom" id="clH-3t-9kz"/>
@@ -21,25 +22,138 @@
                                 <rect key="frame" x="220" y="7" width="95" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="0.2054397865" blue="0.14507344580000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="shadowColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-wQ-8NF">
                                 <rect key="frame" x="245" y="36" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guitar_head2.png" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-e0-0mF">
+                                <rect key="frame" x="147" y="126" width="258" height="363"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="agU-jA-fE2"/>
+                                    <constraint firstAttribute="width" constant="258" id="jod-za-Np5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrl-vp-Tkv">
+                                <rect key="frame" x="226" y="550" width="117" height="30"/>
+                                <state key="normal" title="Tune Button">
+                                    <color key="titleShadowColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tunePress:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="6nd-mQ-jQM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDG-nd-aty">
+                                <rect key="frame" x="211" y="192" width="27" height="25"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="6ir-am-s7z"/>
+                                    <constraint firstAttribute="height" constant="25" id="VEU-eg-bG8"/>
+                                </constraints>
+                                <state key="normal" title="B1"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="9bC-03-d4J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-bg-Cjn">
+                                <rect key="frame" x="211" y="241" width="27" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3tu-PU-dYz"/>
+                                    <constraint firstAttribute="width" constant="30" id="ykt-H0-07e"/>
+                                </constraints>
+                                <state key="normal" title="B2"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="Cod-gb-79N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-je-4Ep">
+                                <rect key="frame" x="201" y="294" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="26l-3V-l9k"/>
+                                    <constraint firstAttribute="height" constant="30" id="Oxa-eD-u6H"/>
+                                </constraints>
+                                <state key="normal" title="B3"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="J2O-oB-rKf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-G3-gCn">
+                                <rect key="frame" x="321" y="190" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Kz2-qo-70S"/>
+                                    <constraint firstAttribute="width" constant="25" id="j8j-w0-NwC"/>
+                                </constraints>
+                                <state key="normal" title="B4"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="iB4-lt-SgO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-fh-971">
+                                <rect key="frame" x="321" y="238" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="UbE-CM-Una"/>
+                                    <constraint firstAttribute="width" constant="28" id="VeT-tF-rOL"/>
+                                </constraints>
+                                <state key="normal" title="B5"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="oQ5-Bn-wQk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XB-hr-nuV">
+                                <rect key="frame" x="321" y="285" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="IRA-Cz-Ie0"/>
+                                    <constraint firstAttribute="width" constant="28" id="mGz-8K-vrz"/>
+                                </constraints>
+                                <state key="normal" title="B6"/>
+                                <connections>
+                                    <action selector="tuneClicked:" destination="Rl3-Qa-Ax2" eventType="touchUpInside" id="u1X-xv-Tcg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CjC-e0-0mF" firstAttribute="leading" secondItem="KDG-nd-aty" secondAttribute="trailing" constant="-100" id="2SM-7h-Xih"/>
+                            <constraint firstItem="N5d-je-4Ep" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="238" id="6BD-Yf-cmi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fi3-G3-gCn" secondAttribute="trailing" constant="125" id="9Xl-TD-uRZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lqT-fh-971" secondAttribute="trailing" constant="120" id="BXP-WN-Xv2"/>
+                            <constraint firstItem="CjC-e0-0mF" firstAttribute="centerX" secondItem="SCf-uJ-U5v" secondAttribute="centerX" id="FD9-66-65C"/>
+                            <constraint firstItem="6XB-hr-nuV" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="235" id="LWr-bV-Wb9"/>
+                            <constraint firstItem="Fi3-G3-gCn" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="160" id="QhJ-a5-z8U"/>
+                            <constraint firstItem="3aP-bg-Cjn" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="195" id="RH4-UC-Wo9"/>
+                            <constraint firstItem="CjC-e0-0mF" firstAttribute="leading" secondItem="3aP-bg-Cjn" secondAttribute="trailing" constant="-98" id="YkR-2u-Sjd"/>
+                            <constraint firstItem="lqT-fh-971" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="200" id="fX8-rT-Cjp"/>
+                            <constraint firstItem="clH-3t-9kz" firstAttribute="top" secondItem="Nrl-vp-Tkv" secondAttribute="bottom" constant="20" id="gMX-k4-kF0"/>
                             <constraint firstItem="LBi-yK-Oec" firstAttribute="centerX" secondItem="SCf-uJ-U5v" secondAttribute="centerX" id="pF4-Dq-cmE"/>
+                            <constraint firstItem="CjC-e0-0mF" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="106" id="pHK-qd-Ftd"/>
+                            <constraint firstItem="CjC-e0-0mF" firstAttribute="leading" secondItem="N5d-je-4Ep" secondAttribute="trailing" constant="-92" id="sCE-bR-7FB"/>
                             <constraint firstItem="Bgk-wQ-8NF" firstAttribute="centerX" secondItem="SCf-uJ-U5v" secondAttribute="centerX" id="vcM-iN-RAa"/>
+                            <constraint firstItem="Nrl-vp-Tkv" firstAttribute="centerX" secondItem="SCf-uJ-U5v" secondAttribute="centerX" id="vkw-WV-pT6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6XB-hr-nuV" secondAttribute="trailing" constant="125" id="xMR-og-BLu"/>
+                            <constraint firstItem="KDG-nd-aty" firstAttribute="top" secondItem="PJI-wS-QsC" secondAttribute="bottom" constant="158" id="zGt-M3-C4u"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="b1Button" destination="KDG-nd-aty" id="fqd-KP-UvE"/>
+                        <outlet property="b2Button" destination="3aP-bg-Cjn" id="meM-hj-WjT"/>
+                        <outlet property="b3Button" destination="N5d-je-4Ep" id="2BF-Iq-n5t"/>
+                        <outlet property="b4Button" destination="Fi3-G3-gCn" id="baR-e3-XN9"/>
+                        <outlet property="b5Button" destination="lqT-fh-971" id="D9B-4N-6cA"/>
+                        <outlet property="b6Button" destination="6XB-hr-nuV" id="6pK-XZ-t6t"/>
+                        <outlet property="headImage" destination="CjC-e0-0mF" id="HK4-Uu-ahG"/>
                         <outlet property="maxFrequencyLabel" destination="Bgk-wQ-8NF" id="5Rn-iI-0ai"/>
+                        <outlet property="tuneButton" destination="Nrl-vp-Tkv" id="Txu-jM-nJF"/>
+                        <outletCollection property="tuneButtons" destination="KDG-nd-aty" collectionClass="NSMutableArray" id="igi-Ra-ehO"/>
+                        <outletCollection property="tuneButtons" destination="3aP-bg-Cjn" collectionClass="NSMutableArray" id="rBh-bT-GuW"/>
+                        <outletCollection property="tuneButtons" destination="N5d-je-4Ep" collectionClass="NSMutableArray" id="oFU-r1-Daa"/>
+                        <outletCollection property="tuneButtons" destination="Fi3-G3-gCn" collectionClass="NSMutableArray" id="a3m-Tc-p4Z"/>
+                        <outletCollection property="tuneButtons" destination="lqT-fh-971" collectionClass="NSMutableArray" id="AGH-Zi-IpY"/>
+                        <outletCollection property="tuneButtons" destination="6XB-hr-nuV" collectionClass="NSMutableArray" id="v8G-a9-SXE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljq-rj-kdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +163,7 @@
         <!--EZFFT-->
         <scene sceneID="0Af-ct-mhy">
             <objects>
-                <viewController id="3im-lX-LfP" customClass="EZFFT" customModule="Guitar_Tune" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3im-lX-LfP" customClass="EZFFT" customModule="Guitar_Design" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EgQ-C0-xFK"/>
                         <viewControllerLayoutGuide type="bottom" id="vp6-1y-sET"/>
@@ -110,7 +224,7 @@
         <!--Play File-->
         <scene sceneID="A3L-3B-AK8">
             <objects>
-                <viewController id="Ul6-HE-PoG" customClass="EZPlayFile" customModule="Guitar_Tune" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ul6-HE-PoG" customClass="EZPlayFile" customModule="Guitar_Design" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XM8-QV-lkS"/>
                         <viewControllerLayoutGuide type="bottom" id="euL-QW-i4L"/>
@@ -262,4 +376,7 @@
             <point key="canvasLocation" x="537" y="877"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="guitar_head2.png" width="400" height="600"/>
+    </resources>
 </document>

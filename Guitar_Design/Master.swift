@@ -8,22 +8,70 @@
 
 import UIKit
 import EZAudio
-class Master: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
+class Master: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate,EZAudioPlayerDelegate {
 
     @IBOutlet weak var maxFrequencyLabel: UILabel!
     
     var microphone:EZMicrophone!
     var fft:EZAudioFFTRolling!
     
+    @IBOutlet weak var headImage: UIImageView!
+    @IBOutlet weak var tuneButton: UIButton!
+    
+    @IBOutlet weak var b1Button: UIButton!
+    @IBOutlet weak var b2Button: UIButton!
+    @IBOutlet weak var b3Button: UIButton!
+    @IBOutlet weak var b4Button: UIButton!
+    @IBOutlet weak var b5Button: UIButton!
+    @IBOutlet weak var b6Button: UIButton!
+
+    //------------------------------------------------------------------------------
+    // MARK: View Functions
+    //------------------------------------------------------------------------------
+    @IBAction func tunePress(sender: AnyObject) {
+        print("tuner clicked")
+    }
+    
+    @IBOutlet var tuneButtons: [UIButton]!
+    
+    
+    @IBAction func tuneClicked(sender: UIButton) {
+        
+        for btn in tuneButtons {
+            if sender == btn {
+                btn.backgroundColor = UIColor.redColor()
+            }
+            else {
+                btn.backgroundColor = UIColor.clearColor()
+            }
+        }
+    }
+    
+    
     let FFTViewControllerFFTWindowSize:vDSP_Length = 4096
+    
+
+    func setDesign(){
+        
+        tuneButton.backgroundColor = UIColor.redColor()
+        tuneButton.layer.cornerRadius = 5
+        
+    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var session:AVAudioSession = AVAudioSession.sharedInstance()
-        var error:NSError!
+        
+        setDesign()
+        
+        self.view.bringSubviewToFront(b1Button)
+        
+        let session:AVAudioSession = AVAudioSession.sharedInstance()
+        let error:NSError!
         
         //( the _=  try? )will ignore the errors thrown by method
         _ = try? session.setCategory(AVAudioSessionCategoryPlayAndRecord)
@@ -35,6 +83,7 @@ class Master: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
         
         //problem with this line
         fft = EZAudioFFTRolling.fftWithWindowSize(FFTViewControllerFFTWindowSize, sampleRate: Float(self.microphone.audioStreamBasicDescription().mSampleRate), delegate: self)
+        
         
         self.microphone.startFetchingAudio()
         
@@ -56,6 +105,21 @@ class Master: UIViewController,EZMicrophoneDelegate,EZAudioFFTDelegate {
         });
         */
     }
+    
+    
+    //-----------------------------------------------------------------------------
+    // MARK: EZAudioPlayerDelegate
+    //------------------------------------------------------------------------------
+    
+    
+    func audioPlayer(audioPlayer: EZAudioPlayer!, playedAudio buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32, inAudioFile audioFile: EZAudioFile!) {
+        weak var weakSelf = self
+        
+    }
+    func audioPlayer(audioPlayer: EZAudioPlayer!, updatedPosition framePosition: Int64, inAudioFile audioFile: EZAudioFile!) {
+        weak var weakSelf = self
+    }
+
     
     
     //------------------------------------------------------------------------------
