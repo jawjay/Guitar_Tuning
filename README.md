@@ -1,2 +1,3 @@
 # Guitar_Tuning
-Automatic Guitar Tuner made for Senior Design Project
+Accompanying software for an Automatic Guitar Tuner made for a Senior Electrical Engineering Design Project at Washington University. 
+
