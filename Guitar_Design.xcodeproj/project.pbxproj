@@ -11,7 +11,10 @@
 		9F0138D51C9F5237000CA772 /* EZPlayFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0138D41C9F5237000CA772 /* EZPlayFile.swift */; };
 		9F1A6C851CA8707E001484BB /* guitar_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6C841CA8707E001484BB /* guitar_head.png */; };
 		9F1A6C871CA871C8001484BB /* guitar_head2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6C861CA871C8001484BB /* guitar_head2.png */; };
-		9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */; };
+		9F2CD2DB1CCA8701006B2CA7 /* LEFTONEPULSE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F2CD2D71CCA8701006B2CA7 /* LEFTONEPULSE.wav */; };
+		9F2CD2DC1CCA8701006B2CA7 /* LEFTTWOPULSE.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F2CD2D81CCA8701006B2CA7 /* LEFTTWOPULSE.wav */; };
+		9F2CD2DD1CCA8701006B2CA7 /* RightOnePulse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F2CD2D91CCA8701006B2CA7 /* RightOnePulse.wav */; };
+		9F2CD2DE1CCA8701006B2CA7 /* RightTwoPulse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9F2CD2DA1CCA8701006B2CA7 /* RightTwoPulse.wav */; };
 		9F9DFE8E1C9EFE660021D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */; };
 		9F9DFE901C9EFE660021D9C1 /* EZFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */; };
 		9F9DFE931C9EFE660021D9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9DFE911C9EFE660021D9C1 /* Main.storyboard */; };
@@ -20,6 +23,7 @@
 		9F9DFE9B1C9EFE660021D9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9DFE991C9EFE660021D9C1 /* LaunchScreen.storyboard */; };
 		9F9DFEA61C9EFE660021D9C1 /* Guitar_DesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFEA51C9EFE660021D9C1 /* Guitar_DesignTests.swift */; };
 		9F9DFEB11C9EFE660021D9C1 /* Guitar_DesignUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DFEB01C9EFE660021D9C1 /* Guitar_DesignUITests.swift */; };
+		9FE950BA1CD2DD3D00AC23D5 /* LeftTwoPulse2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FE950B91CD2DD3D00AC23D5 /* LeftTwoPulse2.wav */; };
 		9FF016E01CA836C8007C9E6A /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF016DF1CA836C8007C9E6A /* Master.swift */; };
 		AE2A24E83D7010AC098FF043 /* Pods_Guitar_DesignUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85682A1EB5BF6149FBF8E474 /* Pods_Guitar_DesignUITests.framework */; };
 		F2F4A87A1FB37344D89C52A4 /* Pods_Guitar_DesignTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8ED30B76265C815872BE14A /* Pods_Guitar_DesignTests.framework */; };
@@ -52,7 +56,11 @@
 		9F0138D41C9F5237000CA772 /* EZPlayFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZPlayFile.swift; sourceTree = "<group>"; };
 		9F1A6C841CA8707E001484BB /* guitar_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar_head.png; sourceTree = "<group>"; };
 		9F1A6C861CA871C8001484BB /* guitar_head2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar_head2.png; sourceTree = "<group>"; };
-		9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "simple-drum-beat.wav"; sourceTree = "<group>"; };
+		9F2CD2D71CCA8701006B2CA7 /* LEFTONEPULSE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LEFTONEPULSE.wav; sourceTree = "<group>"; };
+		9F2CD2D81CCA8701006B2CA7 /* LEFTTWOPULSE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LEFTTWOPULSE.wav; sourceTree = "<group>"; };
+		9F2CD2D91CCA8701006B2CA7 /* RightOnePulse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RightOnePulse.wav; sourceTree = "<group>"; };
+		9F2CD2DA1CCA8701006B2CA7 /* RightTwoPulse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RightTwoPulse.wav; sourceTree = "<group>"; };
+		9F9334851CC5A77F00F9B3AD /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		9F9DFE8A1C9EFE660021D9C1 /* Guitar_Design.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guitar_Design.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZFFT.swift; sourceTree = "<group>"; };
@@ -67,6 +75,7 @@
 		9F9DFEAC1C9EFE660021D9C1 /* Guitar_Design.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Guitar_Design.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9DFEB01C9EFE660021D9C1 /* Guitar_DesignUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guitar_DesignUITests.swift; sourceTree = "<group>"; };
 		9F9DFEB21C9EFE660021D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FE950B91CD2DD3D00AC23D5 /* LeftTwoPulse2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LeftTwoPulse2.wav; sourceTree = "<group>"; };
 		9FF016DF1CA836C8007C9E6A /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		A8ED30B76265C815872BE14A /* Pods_Guitar_DesignTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guitar_DesignTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72EA79CD4E0037C0676221 /* Pods-Guitar_DesignUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guitar_DesignUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guitar_DesignUITests/Pods-Guitar_DesignUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,9 +123,13 @@
 		9F9DFE811C9EFE660021D9C1 = {
 			isa = PBXGroup;
 			children = (
+				9F2CD2D71CCA8701006B2CA7 /* LEFTONEPULSE.wav */,
+				9F2CD2D81CCA8701006B2CA7 /* LEFTTWOPULSE.wav */,
+				9FE950B91CD2DD3D00AC23D5 /* LeftTwoPulse2.wav */,
+				9F2CD2D91CCA8701006B2CA7 /* RightOnePulse.wav */,
+				9F2CD2DA1CCA8701006B2CA7 /* RightTwoPulse.wav */,
 				9F1A6C841CA8707E001484BB /* guitar_head.png */,
 				9F1A6C861CA871C8001484BB /* guitar_head2.png */,
-				9F91600B1CA5D09A005D8EA4 /* simple-drum-beat.wav */,
 				9F9DFE8C1C9EFE660021D9C1 /* Guitar_Design */,
 				9F9DFEA41C9EFE660021D9C1 /* Guitar_DesignTests */,
 				9F9DFEAF1C9EFE660021D9C1 /* Guitar_DesignUITests */,
@@ -140,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				9F9DFE8D1C9EFE660021D9C1 /* AppDelegate.swift */,
+				9F9334851CC5A77F00F9B3AD /* Bridging-Header.h */,
 				9F9DFE8F1C9EFE660021D9C1 /* EZFFT.swift */,
 				9FF016DF1CA836C8007C9E6A /* Master.swift */,
 				9F0138D41C9F5237000CA772 /* EZPlayFile.swift */,
@@ -259,13 +273,17 @@
 				TargetAttributes = {
 					9F9DFE891C9EFE660021D9C1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5DUDUT29Y6;
+						LastSwiftMigration = 0810;
 					};
 					9F9DFEA01C9EFE660021D9C1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 9F9DFE891C9EFE660021D9C1;
 					};
 					9F9DFEAB1C9EFE660021D9C1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 9F9DFE891C9EFE660021D9C1;
 					};
 				};
@@ -295,10 +313,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F91600C1CA5D09A005D8EA4 /* simple-drum-beat.wav in Resources */,
+				9F2CD2DC1CCA8701006B2CA7 /* LEFTTWOPULSE.wav in Resources */,
+				9F2CD2DB1CCA8701006B2CA7 /* LEFTONEPULSE.wav in Resources */,
 				9F1A6C851CA8707E001484BB /* guitar_head.png in Resources */,
 				9F9DFE9B1C9EFE660021D9C1 /* LaunchScreen.storyboard in Resources */,
+				9F2CD2DD1CCA8701006B2CA7 /* RightOnePulse.wav in Resources */,
+				9FE950BA1CD2DD3D00AC23D5 /* LeftTwoPulse2.wav in Resources */,
 				9F9DFE981C9EFE660021D9C1 /* Assets.xcassets in Resources */,
+				9F2CD2DE1CCA8701006B2CA7 /* RightTwoPulse.wav in Resources */,
 				9F1A6C871CA871C8001484BB /* guitar_head2.png in Resources */,
 				9F9DFE931C9EFE660021D9C1 /* Main.storyboard in Resources */,
 			);
@@ -543,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -581,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -593,10 +615,13 @@
 			baseConfigurationReference = 71AD20EBD09810F906AB1F28 /* Pods-Guitar_Design.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5DUDUT29Y6;
 				INFOPLIST_FILE = Guitar_Design/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-Design";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj5.MJ.Guitar-Design";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_OBJC_BRIDGING_HEADER = "Guitar_Design/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -605,10 +630,14 @@
 			baseConfigurationReference = D1E1765549705DCEBD8A3920 /* Pods-Guitar_Design.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5DUDUT29Y6;
 				INFOPLIST_FILE = Guitar_Design/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-Design";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj5.MJ.Guitar-Design";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_OBJC_BRIDGING_HEADER = "Guitar_Design/Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Guitar_Design/Bridging_Header.h;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -621,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignTests";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guitar_Design.app/Guitar_Design";
 			};
 			name = Debug;
@@ -634,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignTests";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guitar_Design.app/Guitar_Design";
 			};
 			name = Release;
@@ -646,6 +677,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignUITests";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Guitar_Design;
 				USES_XCTRUNNER = YES;
 			};
@@ -659,6 +691,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MJ.Guitar-DesignUITests";
 				PRODUCT_NAME = Guitar_Design;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Guitar_Design;
 				USES_XCTRUNNER = YES;
 			};

@@ -17,13 +17,13 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     @IBOutlet weak var rollingHistorySlider: UISlider!
     @IBOutlet weak var volumeSlider: UISlider!
     
-    @IBAction func changePlotType(sender: AnyObject) {
+    @IBAction func changePlotType(_ sender: AnyObject) {
         let selectedSegment = sender.selectedSegmentIndex
         switch(selectedSegment){
-        case 0:
+        case 0?:
             self.drawBufferPlot()
             break
-        case 1:
+        case 1?:
             self.drawRollingPlot()
             break
         default:
@@ -31,26 +31,26 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
             
         }
     }
-    @IBAction func changeRollingHistoryLength(sender: AnyObject) {
+    @IBAction func changeRollingHistoryLength(_ sender: AnyObject) {
         //on Rolling History Slider change
         let value:Float = sender.value
         self.audioPlot.setRollingHistoryLength(Int32(value))
     }
     
-    @IBAction func changeVolume(sender: AnyObject) {
+    @IBAction func changeVolume(_ sender: AnyObject) {
         // on volume slider
         let value:Float = sender.value
         //UNCOMMENTself.player.setVolume = value
     }
     
-    @IBAction func play(sender: AnyObject) {
+    @IBAction func play(_ sender: AnyObject) {
         // on play button
         if(self.player.isPlaying)
         {
             self.player.pause()
         }
         else{
-            if(self.audioPlot.shouldMirror && (self.audioPlot.plotType == EZPlotType.Buffer))
+            if(self.audioPlot.shouldMirror && (self.audioPlot.plotType == EZPlotType.buffer))
             {
              self.audioPlot.shouldMirror = false
              self.audioPlot.shouldFill = false
@@ -59,9 +59,9 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
         }
     }
     
-    @IBAction func seekToFrame(sender: AnyObject) {
+    @IBAction func seekToFrame(_ sender: AnyObject) {
         // on position slider
-        self.player.seekToFrame(Int64((sender as! UISlider).value))
+        self.player.seek(toFrame: Int64((sender as! UISlider).value))
         
     }
     
@@ -76,10 +76,10 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     // Create a FileManager instance
     
     // Get current directory path
-    let path = NSFileManager.defaultManager().currentDirectoryPath
+    let path = FileManager.default.currentDirectoryPath
    
     
-    let kAudioFileDefault = NSBundle.mainBundle().pathForResource("simple-drum-beat", ofType: "wav")
+    let kAudioFileDefault = Bundle.main.path(forResource: "simple-drum-beat", ofType: "wav")
     
 
     
@@ -91,15 +91,15 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     //------------------------------------------------------------------------------
 
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
 
     }
     //------------------------------------------------------------------------------
     // MARK: Status Bar Style
     //------------------------------------------------------------------------------
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     //------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      /*
+      
         //
         // Setup the AVAudioSession. EZMicrophone will not work properly on iOS
         // if you don't do this!
@@ -126,7 +126,7 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
         self.audioPlot.backgroundColor = UIColor(red: 0.816, green: 0.349, blue: 0.255, alpha: 1)
         
         self.audioPlot.color           = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.audioPlot.plotType        = EZPlotType.Buffer
+        self.audioPlot.plotType        = EZPlotType.buffer
         self.audioPlot.shouldFill      = true
         self.audioPlot.shouldMirror    = true
         
@@ -143,7 +143,7 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
         // Override the output to the speaker
         //
         
-        _ = try? session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+        _ = try? session.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
         
         //
         // Customize UI components
@@ -161,9 +161,9 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
         Try opening the sample file
         */
         //[self openFileWithFilePathURL:[NSURL fileURLWithPath:kAudioFileDefault]];
-        self.openFileWithFilePathURL(NSURL.fileURLWithPath(kAudioFileDefault!))
+        self.openFileWithFilePathURL(URL(fileURLWithPath: kAudioFileDefault!))
         
-        */
+        
         
     }
     
@@ -172,42 +172,42 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     //------------------------------------------------------------------------------
     
     func setupNotifications(){
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerDidChangeAudioFile:", name: EZAudioPlayerDidChangeAudioFileNotification, object: self.player)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerDidChangeOutputDevice:", name: EZAudioPlayerDidChangeOutputDeviceNotification, object: self.player)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "audioPlayerDidChangePlayState:", name: EZAudioPlayerDidChangePlayStateNotification, object: self.player)
+        NotificationCenter.default.addObserver(self, selector: #selector(EZPlayFile.audioPlayerDidChangeAudioFile(_:)), name: NSNotification.Name.EZAudioPlayerDidChangeAudioFile, object: self.player)
+        NotificationCenter.default.addObserver(self, selector: #selector(EZPlayFile.audioPlayerDidChangeOutputDevice(_:)), name: NSNotification.Name.EZAudioPlayerDidChangeOutputDevice, object: self.player)
+        NotificationCenter.default.addObserver(self, selector: #selector(EZPlayFile.audioPlayerDidChangePlayState(_:)), name: NSNotification.Name.EZAudioPlayerDidChangePlayState, object: self.player)
     }
     
-    func audioPlayerDidChangeAudioFile(notification:NSNotification){
+    func audioPlayerDidChangeAudioFile(_ notification:Notification){
         let player:EZAudioPlayer = notification.object as! EZAudioPlayer
         NSLog("Player changed audio file: %@", player.audioFile)
     }
-    func audioPlayerDidChangeOutputDevice(notification:NSNotification){
+    func audioPlayerDidChangeOutputDevice(_ notification:Notification){
         let player:EZAudioPlayer = notification.object as! EZAudioPlayer
         NSLog("Player changed output device: %@", player.device)
     }
-    func audioPlayerDidChangePlayState(notification:NSNotification){
+    func audioPlayerDidChangePlayState(_ notification:Notification){
         let player:EZAudioPlayer = notification.object as! EZAudioPlayer
-        NSLog("Player changed state,isPlaying:%i", player.isPlaying)
+//        NSLog("Player changed state,isPlaying:%i", player.isPlaying)
     }
     //-----------------------------------------------------------------------------
     // MARK: Utility
     //------------------------------------------------------------------------------
     
     func drawBufferPlot(){
-        self.audioPlot.plotType = EZPlotType.Buffer
+        self.audioPlot.plotType = EZPlotType.buffer
         self.audioPlot.shouldMirror = false
         self.audioPlot.shouldFill = false
     }
 
     func drawRollingPlot(){
-        self.audioPlot.plotType = EZPlotType.Rolling
+        self.audioPlot.plotType = EZPlotType.rolling
         self.audioPlot.shouldFill = true
         self.audioPlot.shouldMirror = false
     }
     
     
-    func openFileWithFilePathURL(filePathURL:NSURL){
-        self.audioFile = EZAudioFile(URL: filePathURL)
+    func openFileWithFilePathURL(_ filePathURL:URL){
+        self.audioFile = EZAudioFile(url: filePathURL)
         
         //
         // Update the UI
@@ -258,16 +258,16 @@ class EZPlayFile: UIViewController,EZAudioPlayerDelegate{
     //------------------------------------------------------------------------------
     
     
-    func audioPlayer(audioPlayer: EZAudioPlayer!, playedAudio buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32, inAudioFile audioFile: EZAudioFile!) {
+    func audioPlayer(_ audioPlayer: EZAudioPlayer!, playedAudio buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32, in audioFile: EZAudioFile!) {
         weak var weakSelf = self
-        dispatch_async(dispatch_get_main_queue(), {() -> Void in
+        DispatchQueue.main.async(execute: {() -> Void in
             weakSelf!.audioPlot.updateBuffer(buffer[0], withBufferSize: bufferSize)
         })
     }
-    func audioPlayer(audioPlayer: EZAudioPlayer!, updatedPosition framePosition: Int64, inAudioFile audioFile: EZAudioFile!) {
+    func audioPlayer(_ audioPlayer: EZAudioPlayer!, updatedPosition framePosition: Int64, in audioFile: EZAudioFile!) {
         weak var weakSelf = self
-        dispatch_async(dispatch_get_main_queue(), {() -> Void in
-            if !weakSelf!.positionSlider.touchInside {
+        DispatchQueue.main.async(execute: {() -> Void in
+            if !weakSelf!.positionSlider.isTouchInside {
                 weakSelf!.positionSlider.value = Float(framePosition)
             }
         })
