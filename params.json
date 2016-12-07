@@ -1,0 +1,6 @@
+{
+  "name": "Guitar tuning",
+  "tagline": "Automatic Guitar Tuner iOS app (+Hardware build specifications)",
+  "body": "# Guitar_Tuning\r\nAutomatic Guitar Tuner made for a Electrical Engineering Design Project at Washington University. Tuner is controlled via an iOS app. Hardware built with an arduino and a stepper motor. \r\n### Layout\r\n![Main Layout](images/sim1.png)\r\n![demo app](images/motor.png)\r\n\r\nThe app is pretty useless without the hardware. It all can be purchased for under $40(assuming you have access to a 3D printer).The components are:\r\n### Neccesary Components\r\n* Arduino Uno\r\n* Tuner Clip ( .cad available in source)\r\n* 3.5mm audio cable\r\n* BYJ48 Stepper Motor\r\n* ULN2300 Motor Driver\r\n* IRF640 Transistor\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
